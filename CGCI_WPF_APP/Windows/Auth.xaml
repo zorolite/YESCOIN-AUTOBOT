@@ -1,0 +1,32 @@
+﻿<dx:ThemedWindow xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+    x:Class="CGCI_WPF_APP.Windows.Auth"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    Title="Auth" Height="220" Width="420" WindowState="Normal" WindowKind="Normal" Topmost="True" ResizeMode="NoResize"
+    >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="30*"/>
+        </Grid.ColumnDefinitions>
+
+        <dxe:TextEdit Name="userName_txt" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"   />
+        <dxe:TextEdit Name="password_txt" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"   />
+        <dx:SimpleButton Name="Validate_btn" Grid.Row="5" Grid.Column="1" Content="Valider" Grid.ColumnSpan="2" Height="20" Margin="0,0,92,0" VerticalAlignment="Top" Click="Validate_btn_Click"/>
+        <dx:SimpleButton Name="cancel_btn" Grid.Row="5" Grid.Column="3" Content="Anuller" Click="cancel_btn_Click"/>
+    </Grid>
+</dx:ThemedWindow>
