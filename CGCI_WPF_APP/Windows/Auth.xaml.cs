@@ -35,7 +35,7 @@ namespace CGCI_WPF_APP.Windows
             MainWindow mainWindow = new MainWindow();
             this.Visibility = Visibility.Collapsed;
             mainWindow.ShowDialog();
-            //this.Close();
+            this.Close();
         }
     }
 }
