@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,6 +21,9 @@ namespace CGCI_WPF_APP.Windows
     /// </summary>
     public partial class Auth : ThemedWindow
     {
+        public CGCI_dbEntities CgciDbEntities = new CGCI_dbEntities();
+
+
         public Auth()
         {
             InitializeComponent();
@@ -30,12 +34,23 @@ namespace CGCI_WPF_APP.Windows
             this.Close();
         }
 
-        private void Validate_btn_Click(object sender, RoutedEventArgs e)
+        private async void Validate_btn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             this.Visibility = Visibility.Collapsed;
             mainWindow.ShowDialog();
-            this.Close();
+            //this.Close();
+
+
+
+
+            ///
+            //User user = new User();
+            //user.user_name = userName_txt.Text;
+            //user.password = password_txt.Text;
+
+            //CgciDbEntities.Users.Add(user);
+            //await CgciDbEntities.SaveChangesAsync();
         }
     }
 }

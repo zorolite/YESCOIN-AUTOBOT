@@ -10,10 +10,10 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CGCI_WPF_APP
+
+namespace CGCI_WPF_APP.Windows
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,11 +23,6 @@ namespace CGCI_WPF_APP
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void mainWindow_Closed(object sender, EventArgs e)
-        {
-            Application.Current.Shutdown();
         }
     }
 }
