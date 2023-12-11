@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CGCI_WPF_APP.Classes;
 
 
 namespace CGCI_WPF_APP.Windows
@@ -23,6 +24,13 @@ namespace CGCI_WPF_APP.Windows
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void SimpleButton_Click(object sender, RoutedEventArgs e)
+        {
+            Employee employee = new Employee();
+            employee.LastName = "Test";
+            employee.DateOfBirth = DateTime.Now.ToString();
         }
     }
 }

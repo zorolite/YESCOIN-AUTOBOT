@@ -15,6 +15,18 @@ namespace CGCI_WPF_APP
     public partial class User
     {
         public int id { get; set; }
+
+        //public string name; //pas la meme chose, ne pas utiliser
+
+        //correcte, utiliser cette methode ou la methode abrégée
+        //private string name;
+        //public string Name
+        //{
+        //    get { return name; }
+        //    set { name = value; }
+        //}
+
+        //methode abrégée
         public string user_name { get; set; }
         public string password { get; set; }
         public string matricule { get; set; }
