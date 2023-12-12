@@ -3,18 +3,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
     xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" 
+    xmlns:CGCI_WPF_APP="clr-namespace:CGCI_WPF_APP" 
     x:Class="CGCI_WPF_APP.Windows.User_wind"
     Title="User_wind" Height="800" Width="1000"
     >
-
     <Grid>
         <dxg:GridControl x:Name="gridControl" RestoreStateKeyFieldName="id" RestoreStateOnSourceChange="True" >
             <dxg:GridControl.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Export pdf" Click="PDF_Click" ></MenuItem>
-                    <MenuItem Header="Export XLSX" Click="XLSX_Click" ></MenuItem>
-                    <MenuItem Header="Print preview" Click="Preview_Click" ></MenuItem>
-                    <MenuItem Header="Print" Click="Print_Click" ></MenuItem>
+                    <MenuItem Header="Export pdf" Click="PDF_Click" />
+                    <MenuItem Header="Export XLSX" Click="XLSX_Click" />
+                    <MenuItem Header="Print preview" Click="Preview_Click" />
+                    <MenuItem Header="Print" Click="Print_Click" />
                 </ContextMenu>
             </dxg:GridControl.ContextMenu>
             <dxg:GridControl.TotalSummary>
@@ -32,7 +32,16 @@
             <dxg:GridColumn FieldName="matricule" IsSmart="True"/>
             <dxg:GridColumn FieldName="first_name" IsSmart="True"/>
             <dxg:GridColumn FieldName="last_name" IsSmart="True"/>
-            <dxg:GridColumn FieldName="fuction" IsSmart="True"/>
+            <dxg:GridColumn FieldName="fuction" ReadOnly="True" Header="Code" IsSmart="True">
+                <dxg:GridColumn.EditSettings>
+                    <dxg:LookUpEditSettings Name="LookUpEditSettingsCode"/>
+                </dxg:GridColumn.EditSettings>
+            </dxg:GridColumn>
+            <dxg:GridColumn FieldName="fuction" IsSmart="True">
+                <dxg:GridColumn.EditSettings>
+                    <dxg:LookUpEditSettings Name="LookUpEditSettings"/>
+                </dxg:GridColumn.EditSettings>
+            </dxg:GridColumn>
         </dxg:GridControl>
     </Grid>
 </dx:ThemedWindow>

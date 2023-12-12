@@ -33,6 +33,13 @@ namespace CGCI_WPF_APP.Windows
         {
             _Context = new CGCI_dbEntities();
             gridControl.ItemsSource = _Context.Users.ToList();
+            LookUpEditSettings.ItemsSource = _Context.fonctions.ToList();
+            LookUpEditSettings.ValueMember = "id";
+            LookUpEditSettings.DisplayMember = "fonction1";
+
+            LookUpEditSettingsCode.ItemsSource = _Context.fonctions.ToList();
+            LookUpEditSettingsCode.ValueMember = "id";
+            LookUpEditSettingsCode.DisplayMember = "code";
         }
 
         void OnValidateRow(object sender, GridRowValidationEventArgs e)
