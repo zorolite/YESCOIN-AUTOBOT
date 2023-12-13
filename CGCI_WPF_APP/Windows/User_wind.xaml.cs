@@ -28,11 +28,12 @@ namespace CGCI_WPF_APP.Windows
             LoadData();
         }
         CGCI_dbEntities _Context;
-
+        
         void LoadData()
         {
             _Context = new CGCI_dbEntities();
             gridControl.ItemsSource = _Context.Users.ToList();
+
             LookUpEditSettings.ItemsSource = _Context.fonctions.ToList();
             LookUpEditSettings.ValueMember = "id";
             LookUpEditSettings.DisplayMember = "fonction1";
@@ -44,7 +45,10 @@ namespace CGCI_WPF_APP.Windows
 
         void OnValidateRow(object sender, GridRowValidationEventArgs e)
         {
-            var row = (User)e.Row;
+            var row = (User)e.Row; // e.Row et User doivent avoire les mm champs/ propriété et mm type pour chaque champ
+            //var row =  e.Row as User;
+            //User row = e.Row as User;
+
             if (e.IsNewItem)
                 _Context.Users.Add(row);
             _Context.SaveChanges();
@@ -55,9 +59,14 @@ namespace CGCI_WPF_APP.Windows
             var row = (User)e.Rows.Single();
             _Context.Users.Remove(row);
             _Context.SaveChanges();
+
+            //var rows = (User[])e.Rows;
+            //_Context.Users.RemoveRange(rows);
+            //_Context.SaveChanges();
         }
 
-        void OnDataSourceRefresh(object sender, DataSourceRefreshEventArgs e) { LoadData(); }
+        void OnDataSourceRefresh(object sender, DataSourceRefreshEventArgs e) 
+        { LoadData(); }
 
         private void PDF_Click(object sender, RoutedEventArgs e)
         {
